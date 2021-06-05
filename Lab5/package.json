@@ -1,0 +1,91 @@
+{
+	"name": "pt",
+	"displayName": "PomodoroTimer",
+	"description": "A pomodoro timer for procrastination management",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:pt.startPomodoro",
+		"onCommand:pt.cancelPomodoro",
+		"onCommand:pt.startRest",
+		"onCommand:pt.cancelRest",
+		"onCommand:pt.pomodoroMins",
+		"onCommand:pt.restMins"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "pt.startPomodoro",
+				"title": "Start Pomodoro"
+			},
+			{
+				"command": "pt.cancelPomodoro",
+				"title": "Cancel Pomodoro"
+			},
+			{
+				"command": "pt.startRest",
+				"title": "Start Rest"
+			},
+			{
+				"command": "pt.cancelRest",
+				"title": "Cancel Rest"
+			},
+			{
+				"command": "pt.pomodoroMins",
+				"title": "Set Pomodoro Duration"
+			},
+			{
+				"command": "pt.restMins",
+				"title": "Set Rest Duration"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "pt.startPomodoro",
+				"key": "ctrl+p ctrl+p"
+			},
+			{
+				"command": "pt.cancelPomodoro",
+				"key": "ctrl+p ctrl+["
+			},
+			{
+				"command": "pt.startRest",
+				"key": "ctrl+p ctrl+r"
+			},
+			{
+				"command": "pt.cancelRest",
+				"key": "ctrl+p ctrl+t"
+			},
+			{
+				"command": "pt.pomodoroMins",
+				"key": "ctrl+p ctrl+m"
+			},
+			{
+				"command": "pt.restMins",
+				"key": "ctrl+p ctrl+n"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.56.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
